@@ -1,0 +1,21 @@
+# Node modules
+node_modules/
+
+src/uploads
+
+# Build output
+dist/
+
+# Environment
+.env
+
+# Logs
+*.log
+npm-debug.log*
+
+# TypeScript
+*.tsbuildinfo
+
+# OS files
+.DS_Store
+Thumbs.db

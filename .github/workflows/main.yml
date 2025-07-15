@@ -1,0 +1,29 @@
+name: 🚀 Deploy Backend to Server
+
+on:
+  push:
+    branches:
+      - main  # or your deployment branch
+
+jobs:
+  deploy:
+    name: Deploy Backend
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🧾 Checkout Code
+        uses: actions/checkout@v3
+
+      - name: 🔐 Connect and Deploy to Server
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.SERVER_IP }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          port: 22
+          script: |
+            cd /root/wealthgrid-server     # change this to your actual project path on the server
+            git pull origin main    # make sure git is set up on the server
+            npm install             # or yarn install
+            npx tsc       # for build 
+            pm2 reload wealthgrid-backend     # restart process, change name if needed

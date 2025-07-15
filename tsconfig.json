@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "CommonJS",                 // Use CommonJS for Node.js
+    "moduleResolution": "node",
+    "outDir": "./dist",                   // Output to dist
+    "rootDir": ".",                     // Compile from src only
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "allowImportingTsExtensions": false   // Optional: can be false if not needed
+  },
+  "include": ["src/**/*.ts"],             // Only include files inside src
+  "exclude": ["node_modules"]
+}
