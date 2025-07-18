@@ -54,11 +54,12 @@ const userSchema = new mongoose.Schema({
     enum: ["private_sector", "public_sector", "government_sector", "business", "profession", "agriculture"],
     default:"private_sector"
   },
-  yearlyIncome: {
-    type: String,
-    enum: ["25 Lac +", "10 - 25 Lac", "15 - 10 Lac +", "1 - 5 Lac +", "Upto 1 Lac"],
-    default:"25 Lac +"
-  },
+  yearlyIncome: { 
+  type: String,
+  enum: ["25 Lac +", "10 - 25 Lac", "5 - 10 Lac +", "1 - 5 Lac +", "Upto 1 Lac"],
+  default: "25 Lac +"
+},
+
   investmentExperience: {
     type: String,
     enum: ["None", "Beginner", "Intermediate", "Experienced"],
