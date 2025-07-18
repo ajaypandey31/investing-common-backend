@@ -22,8 +22,8 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           port: 22
           script: |
-            cd /var/www/staging/wealthgrid-server-main     # change this to your actual project path on the server
+            cd /var/www/staging/investing-common-backend     # change this to your actual project path on the server
             git pull origin main    # make sure git is set up on the server
             npm install             # or yarn install
             npx tsc       # for build 
-            pm2 reload trading-kite-api     
+            pm2 reload common-api    
